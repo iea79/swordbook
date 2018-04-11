@@ -11,25 +11,24 @@ input[type=datetime],
 textarea {
 	background-color: $input_bg_color;
 	border: 1px solid $input_border_color;
-	padding: 6px 15px;
+	padding: 21px 23px 23px 60px ;
 	outline: none;
-	font-size: 16px;
-	font-weight: 300;
+	font-size: 18px;
+	font-weight: 400;
 	font-family: $main_font_family;
 	border-radius: 5px;
+	max-width: 385px;
+	border-left: 0 !important;
+	border-right: 0 !important;
+	color: #526265;
 	@include trs(0.3s);
 	&:hover {
 	}
 	&:focus {
-		border: 1px solid #bebebe;
-		background-color: #f6f6f6;
-		@include placeholder {
-			color: red;
-		}
+		border: 1px solid #186db9;
 	}
-	&.input_error {
-		background-color: #fff0f0;
-		border: 1px solid red;
+	&.invalid {
+		border: 1px solid #e30613;
 	}
 	// Placeholder for input +++++++++++++++
 	@include placeholder {
@@ -127,32 +126,65 @@ input[type=checkbox]:disabled:indeterminate:before {
 
 
 // Style for button and pseudo button for input and link
-.btn {
+.button {
 	color: $btn_default_text_color;
 	font-family: $main_font_family;
-	font-size: 16px;
-	font-weight: 300;
-	padding: 5px 15px 7px;
+	box-shadow: 0 9px 46px rgba(69, 154, 212, 0.67), 0 5px 6px rgba(20, 48, 113, 0.38);
+	background-color: #104f9b;
+	font-size: 18px;
+	padding: 0;
+	font-weight: 700;
 	border: none;
 	outline: none;
 	text-decoration: none;
 	display: inline-block;
-	background-color: $btn_default_bg_color;
 	text-align: center;
 	max-width: 100%;
 	cursor: pointer;
-	border-radius: 5px;
-	@include trs(0.3s);
-	@include trs(0.3);
+	transition: all .3s;
 	text-decoration: none;
-	&:hover {
-		background-color: #fff;
-		color: #000;
-		text-decoration: none;
+	border-radius: 39px;
+	padding-bottom: 7px;
+	position: relative;
+	span {
+		transition: all .3s;
+		// position: absolute;
+		width: 100%;
+		display: block;
+		padding: 25px 40px;
+		top: 0px;
+		border-radius: 39px;
+		display: block;
+		border-top: 0 !important;
+		background-image: linear-gradient(to top, #0d56bb 0%, #44c2fb 100%);
+		// border: 2px solid rgba(#d8c8a5, .2);
+		box-shadow: inset 0 0 3px #d8c8a5;
+		// border: 1px solid #000000;
+		position: relative;
+		&:before {
+			content: '';
+			position: absolute;
+			width: 50%;
+			padding-bottom: 19%;
+			background: url(../img/btn.png) 0 0 no-repeat;
+			background-size: 100%;
+			top: -2px;
+			left: 25%;
+		}
 	}
-	&:focus,&:active {
-		background-color: transparentize(#fff, .2);
-		color: #000;
+	&:hover {
+		box-shadow: 0 9px 46px rgba(69, 154, 212, 0.67), 0 5px 6px rgba(20, 48, 113, 0.38);
+		span {
+			background-image: linear-gradient(to top, #2b92df 0%, #44c2fb 100%);
+		}
+	}
+	&:active {
+		box-shadow: 0 9px 46px rgba(69, 154, 212, 0.67), 0 5px 6px rgba(20, 48, 113, 0.38);
+		padding-bottom: 2px;
+		margin-top: 5px;
+		span {
+			background-image: linear-gradient(to top, #2b92df 0%, #44c2fb 100%);
+		}
 	}
 	@each $status_el, $color_bg in $el_colors {
 		&__#{$status_el} {

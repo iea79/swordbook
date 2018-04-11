@@ -49,13 +49,13 @@ $(document).ready(function() {
 	});
 
 	// Scroll to ID // Плавный скролл к элементу при нажатии на ссылку. В ссылке указываем ID элемента
-	// $('#main__menu a[href^="#"]').click( function(){ 
-	// 	var scroll_el = $(this).attr('href'); 
-	// 	if ($(scroll_el).length != 0) {
-	// 	$('html, body').animate({ scrollTop: $(scroll_el).offset().top }, 500);
-	// 	}
-	// 	return false;
-	// });
+	$('[data-scroll]').click( function(){ 
+		var scroll_el = $(this).attr('href'); 
+		if ($(scroll_el).length != 0) {
+		$('html, body').animate({ scrollTop: $(scroll_el).offset().top }, 500);
+		}
+		return false;
+	});
 
 	// Stiky menu // Липкое меню. При прокрутке к элементу #header добавляется класс .stiky который и стилизуем
     // $(document).ready(function(){
@@ -71,6 +71,80 @@ $(document).ready(function() {
     // });
    	// setGridMatch($('[data-grid-match] .grid__item'));
    	gridMatch();
+
+   	$('[type=tel]').inputmask("+7(999)99-99-999",{ showMaskOnHover: false });
+
+	new Vue({
+		el: '#slider',
+		data: {
+			perspective: 0,
+			slides: 10
+		},
+		components: {
+			'carousel-3d': Carousel3d.Carousel3d,
+			'slide': Carousel3d.Slide
+		}
+	});
+
+	$('.radio').on('change', function() {
+		if ($(this).prop('checked')) {
+			// var price = $(this).val();
+			$('.buy__check_price span').html($(this).val())			
+		}
+	});
+
+    $(".buy .button").on('click', function (e){ 
+	    e.preventDefault();
+    	var form = $(this).closest('.form');
+    	var url = form.attr('action');
+        var form_data = form.serialize();
+        var field = form.find('[required]');
+
+        field.each(function() {
+	        if ($(this).val() == "") {
+	        	$(this).addClass('invalid');
+	        	return false;
+	        }  	
+        });
+
+        $.ajax({
+            url: url,
+            type: "POST",
+            dataType: "html",
+            data: form_data,
+            success: function (response) {
+            	$('#success').modal('show');
+            }
+        });
+    });
+
+    $(".free .button").on('click', function (e){ 
+	    e.preventDefault();
+    	var form = $(this).closest('.form');
+    	var url = form.attr('action');
+        var form_data = form.serialize();
+        var field = form.find('[required]');
+
+        field.each(function() {
+	        if ($(this).val() == "") {
+	        	$(this).addClass('invalid');
+	        	return false;
+	        }  	
+        });
+
+        $.ajax({
+            url: url,
+            type: "POST",
+            dataType: "html",
+            data: form_data,
+            success: function (response) {
+            	$('.modal').modal('hide');
+            	$('#free_success').modal('show');
+            }
+        });
+    });
+
+
 });
 
 $(window).resize(function(event) {

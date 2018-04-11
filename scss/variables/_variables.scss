@@ -1,11 +1,11 @@
 /* Global variables */
 /* ======================================================================== */
-$main_font_family:								"Open Sans";
-$main_color:									#000;
+$main_font_family:								"Century Schoolbook";
+$main_color:									#373737;
 $main_line_height:								1.2;
-$main_font_size:								16px;
+$main_font_size:								18px;
 
-$container_width:								900px;
+$container_width:								1400px;
 
 $footer_height: 								auto;
 
@@ -43,7 +43,7 @@ $grid_padding:									20px;
 $input_color:									$main_color;
 $input_bg_color:								#fff;
 $input_border_color:							#ddd;
-$input_placeholder_color:						#ddd;
+$input_placeholder_color:						rgba(#526265, .5);
 
 // Input hover color
 $input_hover_color:								#fff;
@@ -71,7 +71,7 @@ $input_error_placeholder_color:					red;
 
 // Button variables
 $btn_default_bg_color:				 			#ddd;
-$btn_default_text_color:                        $main_color;
+$btn_default_text_color:                        $color_withe;
 $btn_contrast_text_color:                       $color_withe;
 $btn_default_bg_color_hover:					#ccc;
 

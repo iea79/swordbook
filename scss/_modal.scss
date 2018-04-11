@@ -16,18 +16,22 @@
     }
     &-close {
         position: absolute;
-        width: 21px;
-        height: 21px;
-        right: 23px;
-        top: 23px;
+        width: 31px;
+        height: 31px;
+        right: 44px;
+        top: 19px;
+        color: rgba(#000, .2);
+        border-radius: 50%;
+        border: 2px solid;
         // background: image-url('close.svg') no-repeat center center;
         &:before,&:after {
             content: '';
             position: absolute;
             display: block;
             width: 20px;
-            border-top: 1px solid $main_color;
-            top: 10px;
+            border-top: 2px solid;
+            top: 13px;
+            left: 4px;
         }
         &:before {
             transform: rotate(45deg);
@@ -55,15 +59,27 @@
     }
 
     &-content {
-        position: relative;
-        background-color: #fff;
-        border: 1px solid #999;
-        border: 1px solid rgba(0,0,0,.2);
-        border-radius: 6px;
-        box-shadow: 0 3px 9px rgba(0,0,0,.5);
-        background-clip: padding-box;
-        outline: 0;
-        padding: 46px 53px;
+        padding-top: 50px;
+        // position: relative;
+        // background-color: #fff;
+        // border: 1px solid #999;
+        // border: 1px solid rgba(0,0,0,.2);
+        // border-radius: 6px;
+        // box-shadow: 0 3px 9px rgba(0,0,0,.5);
+        // background-clip: padding-box;
+        // outline: 0;
+        // padding: 46px 53px;
+        .form {
+            max-width: 545px;
+            margin: auto;
+        }
+        .button {
+            width: 100%;
+            span {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
     }
 
     &-backdrop {
@@ -127,4 +143,14 @@
 }
 
 
-
+.readPage {
+    .modal {
+        &-dialog {
+            max-width: 80%;
+            text-align: center;
+        }
+        &-close {
+            right: -30px;
+        }
+    }
+}
