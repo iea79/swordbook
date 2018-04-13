@@ -100,49 +100,57 @@ $(document).ready(function() {
         var form_data = form.serialize();
         var field = form.find('[required]');
 
-        field.each(function() {
-	        if ($(this).val() == "") {
-	        	$(this).addClass('invalid');
-	        	return false;
-	        }  	
-        });
-
-        $.ajax({
-            url: url,
-            type: "POST",
-            dataType: "html",
-            data: form_data,
-            success: function (response) {
-            	$('#success').modal('show');
-            }
-        });
-    });
-
-    $(".free .button").on('click', function (e){ 
-	    e.preventDefault();
-    	var form = $(this).closest('.form');
-    	var url = form.attr('action');
-        var form_data = form.serialize();
-        var field = form.find('[required]');
+        empty = 0;
 
         field.each(function() {
 	        if ($(this).val() == "") {
 	        	$(this).addClass('invalid');
-	        	return false;
+	        	// return false;
+	        	empty++;
 	        }  	
         });
 
-        $.ajax({
-            url: url,
-            type: "POST",
-            dataType: "html",
-            data: form_data,
-            success: function (response) {
-            	$('.modal').modal('hide');
-            	$('#free_success').modal('show');
-            }
-        });
+        if (empty > 0) {
+        	return false;
+        } else {    	
+	        $.ajax({
+	            url: url,
+	            type: "POST",
+	            dataType: "html",
+	            data: form_data,
+	            success: function (response) {
+	            	$('#success').modal('show');
+	            }
+	        });
+        }
+
     });
+
+    // $(".free .button").on('click', function (e){ 
+	   //  e.preventDefault();
+    // 	var form = $(this).closest('.form');
+    // 	var url = form.attr('action');
+    //     var form_data = form.serialize();
+    //     var field = form.find('[required]');
+
+    //     field.each(function() {
+	   //      if ($(this).val() == "") {
+	   //      	$(this).addClass('invalid');
+	   //      	return false;
+	   //      }  	
+    //     });
+
+    //     $.ajax({
+    //         url: url,
+    //         type: "POST",
+    //         dataType: "html",
+    //         data: form_data,
+    //         success: function (response) {
+    //         	$('.modal').modal('hide');
+    //         	$('#free_success').modal('show');
+    //         }
+    //     });
+    // });
 
 
 });
