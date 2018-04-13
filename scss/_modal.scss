@@ -16,10 +16,10 @@
     }
     &-close {
         position: absolute;
-        width: 31px;
-        height: 31px;
+        width: 32px;
+        height: 32px;
         right: 44px;
-        top: 19px;
+        top: -28px;
         color: rgba(#000, .2);
         border-radius: 50%;
         border: 2px solid;
@@ -59,7 +59,7 @@
     }
 
     &-content {
-        padding-top: 50px;
+        margin-top: 50px;
         // position: relative;
         // background-color: #fff;
         // border: 1px solid #999;
@@ -151,6 +151,7 @@
         }
         &-close {
             right: -30px;
+            color: rgba(#fff, 0.5);
         }
     }
 }

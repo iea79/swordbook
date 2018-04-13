@@ -8,7 +8,7 @@
 	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
 	<meta name="viewport" content="width=1366" />
 
-	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link href="css/style.css?0.1" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -50,7 +50,7 @@
 
 						<div class="firstScreen__action">
 
-							<a href="#" class="button" data-toggle="modal" data-target="#free"><span><i class="icon-book"></i> Скачать первые 3 главы бесплатно</span></a>
+							<a href="#buy" class="button" data-scroll><span><i class="icon-book"></i> Скачать первые 3 главы бесплатно</span></a>
 							
 							<div class="firstScreen__callbak">или <a href="#buy" data-scroll>закажите полную версию</a></div>
 
@@ -244,7 +244,7 @@
 							<input class="form__input form__input_tel" type="tel" name="tel" placeholder="Телефон" id="#" required/>
 						</div>
 						<div class="form__row">
-							<div class="form__quest">Когда вам перезвонить?</div>
+							<div class="form__quest">В каком формате желаете скачать?</div>
 							<div class="buy__check">
 								<div class="buy__check_item">
 									<input class="radio" name="price" type="radio" id="electron" checked value="280" />
@@ -272,13 +272,13 @@
 						<div class="buy__choose">
 							<div class="buy__format">Выберите формат:</div>
 							<ul class="buy__list">
-								<li><a href="#"  data-toggle="modal" data-target="#free">.epub</a></li>
-								<li><a href="#"  data-toggle="modal" data-target="#free">.pdf</a></li>
-								<li><a href="#"  data-toggle="modal" data-target="#free">.txt</a></li>
-								<li><a href="#"  data-toggle="modal" data-target="#free">.doc</a></li>
-								<li><a href="#"  data-toggle="modal" data-target="#free">.rtf</a></li>
-								<li><a href="#"  data-toggle="modal" data-target="#free">.mobi</a></li>
-								<li><a href="#"  data-toggle="modal" data-target="#free">.fb2</a></li>
+								<li><a href="files/book.epub"  download>.epub</a></li>
+								<li><a href="files/book.pdf"  download>.pdf</a></li>
+								<li><a href="files/book.txt"  download>.txt</a></li>
+								<li><a href="files/book.doc"  download>.doc</a></li>
+								<li><a href="files/book.rtf"  download>.rtf</a></li>
+								<li><a href="files/book.mobi"  download>.mobi</a></li>
+								<li><a href="files/book.fb2"  download>.fb2</a></li>
 							</ul>
 						</div>
 					</div>
@@ -354,32 +354,6 @@
 	</div>
 </div>
 <!-- end Modal free -->
-
-
-<!-- begin Modal free_success -->
-<div class="modal fade free_success" id="free_success">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<a href="#" class="modal-close" data-dismiss="modal"></a>
-				<div class="form">
-					<div class="buy__title">Скачайте первые 3 главы бесплатно</div>
-					<div class="buy__choose">
-						<div class="buy__format">Выберите формат:</div>
-						<ul class="buy__list">
-							<li><a href="files/book.epub" download>.epub</a></li>
-							<li><a href="files/book.pdf" download>.pdf</a></li>
-							<li><a href="files/book.txt" download>.txt</a></li>
-							<li><a href="files/book.doc" download>.doc</a></li>
-							<li><a href="files/book.rtf" download>.rtf</a></li>
-							<li><a href="files/book.mobi" download>.mobi</a></li>
-							<li><a href="files/book.fb2" download>.fb2</a></li>
-						</ul>
-					</div>
-				</div>
-		</div>
-	</div>
-</div>
-<!-- end Modal free_success -->
 
 
 <!-- begin Modal success -->

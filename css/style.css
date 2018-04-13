@@ -470,8 +470,6 @@ textarea {
   font-family: "Century Schoolbook";
   border-radius: 5px;
   max-width: 385px;
-  border-left: 0 !important;
-  border-right: 0 !important;
   color: #526265;
   -webkit-transition: all 0.3ss;
   -o-transition: all 0.3ss;
@@ -868,10 +866,10 @@ input[type=checkbox]:disabled:indeterminate:before {
     overflow: hidden; }
   .modal-close {
     position: absolute;
-    width: 31px;
-    height: 31px;
+    width: 32px;
+    height: 32px;
     right: 44px;
-    top: 19px;
+    top: -28px;
     color: rgba(0, 0, 0, 0.2);
     border-radius: 50%;
     border: 2px solid; }
@@ -913,7 +911,7 @@ input[type=checkbox]:disabled:indeterminate:before {
     margin: 10px auto;
     max-width: 690px; }
   .modal-content {
-    padding-top: 50px; }
+    margin-top: 50px; }
     .modal-content .form {
       max-width: 545px;
       margin: auto; }
@@ -967,7 +965,8 @@ input[type=checkbox]:disabled:indeterminate:before {
   text-align: center; }
 
 .readPage .modal-close {
-  right: -30px; }
+  right: -30px;
+  color: rgba(255, 255, 255, 0.5); }
 
 a:not([class]) {
   text-decoration: none;
@@ -1077,7 +1076,8 @@ a:not([class]) {
   .read__item {
     text-align: center;
     font-weight: 600;
-    font-size: 17px; }
+    font-size: 17px;
+    cursor: pointer; }
   .read__img {
     margin-bottom: -45px; }
 

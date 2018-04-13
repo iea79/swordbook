@@ -18,8 +18,8 @@ textarea {
 	font-family: $main_font_family;
 	border-radius: 5px;
 	max-width: 385px;
-	border-left: 0 !important;
-	border-right: 0 !important;
+	// border-left: 0 !important;
+	// border-right: 0 !important;
 	color: #526265;
 	@include trs(0.3s);
 	&:hover {
